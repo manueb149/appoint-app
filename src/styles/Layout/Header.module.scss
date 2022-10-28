@@ -1,0 +1,11 @@
+@import '../variables.scss';
+
+.container {
+  padding-top: $outer-padding;
+  // border: 1px solid rgb(28, 175, 141);
+  position: absolute;
+  z-index: $containers-zindex;
+  left: $sidenav-width;
+  right: 0;
+  height: $header-height;
+}
