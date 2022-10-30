@@ -1,5 +1,6 @@
 import { faRightFromBracket } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { signOut, useSession } from 'next-auth/react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
@@ -11,6 +12,8 @@ import styles from '../../styles/Layout/Sidenav.module.scss';
  */
 export default function Sidenav(): JSX.Element {
   const router = useRouter();
+  const session = useSession();
+  const { data } = session;
   const hasRoute = (selectedRoute: Links) =>
     router.asPath.split('/').includes(selectedRoute);
 
@@ -18,8 +21,14 @@ export default function Sidenav(): JSX.Element {
     <div className={styles.container}>
       <nav>
         <section className={styles.avatar}>
-          <Image priority src="/user.svg" alt="user" width="50" height="50" />
-          <div className={styles.username}>Johan González</div>
+          <Image
+            priority
+            src={data?.user?.image!}
+            alt="user"
+            width="50"
+            height="50"
+          />
+          <div className={styles.username}>{data?.user?.name}</div>
         </section>
         <ul>
           {SidenavLinks.map((link) => (
@@ -34,7 +43,10 @@ export default function Sidenav(): JSX.Element {
           ))}
         </ul>
         <section className={styles.logout}>
-          <span className={styles.title}>
+          <span
+            className={styles.title}
+            onClick={() => signOut({ callbackUrl: '/', redirect: true })}
+          >
             <span className={styles.icon}>
               <FontAwesomeIcon icon={faRightFromBracket} />
             </span>

@@ -16,6 +16,8 @@ module.exports = {
   },
   plugins: ['react', '@typescript-eslint'],
   rules: {
+    'valid-jsdoc': 'off',
+    'new-cap': 'off',
     'spaced-comment': ['error', 'always', { markers: ['/'] }],
     'space-before-function-paren': 'off',
     '@typescript-eslint/space-before-function-paren': 'off',

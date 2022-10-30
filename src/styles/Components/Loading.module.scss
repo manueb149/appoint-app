@@ -1,0 +1,14 @@
+@import '../variables.scss';
+
+.container {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: $outer-padding;
+  left: $outer-padding;
+  bottom: $outer-padding;
+  right: $outer-padding;
+  background-color: $light-background;
+  border-radius: $outer-border-radius;
+}

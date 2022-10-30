@@ -19,8 +19,10 @@
     "@fortawesome/free-regular-svg-icons": "^6.2.0",
     "@fortawesome/free-solid-svg-icons": "^6.2.0",
     "@fortawesome/react-fontawesome": "^0.2.0",
-    "bootstrap": "^5.2.2",
-    "next": "13.0.0",
+    "axios": "latest",
+    "bootstrap": "^5",
+    "next": "latest",
+    "next-auth": "latest",
     "react": "18.2.0",
     "react-dom": "18.2.0"
   },
