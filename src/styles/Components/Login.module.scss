@@ -49,3 +49,21 @@
     }
   }
 }
+
+@media (prefers-color-scheme: dark) {
+  .login {
+    color: #97e7fc;
+    background: rgb(6 52 64) !important;
+  }
+
+  .button {
+    &:hover,
+    &:active {
+      color: black;
+      background: #95d1e0;
+    }
+
+    color: black;
+    background: #aee7f5;
+  }
+}

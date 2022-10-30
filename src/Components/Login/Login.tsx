@@ -9,7 +9,7 @@ const Login = () => {
         <div className={styles.title}>AppOint</div>
         <button
           type="button"
-          className="btn btn-primary"
+          className={[styles.button, 'btn btn-primary'].join(' ')}
           style={{ fontWeight: 'bold' }}
           onClick={() => signIn()}
         >
